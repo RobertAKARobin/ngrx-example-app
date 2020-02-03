@@ -1,27 +1,49 @@
-# NgrxExample
+# @ngrx example application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
+Example application utilizing @ngrx libraries, showcasing common patterns and best practices. Try it on [StackBlitz](https://ngrx.github.io/platform/stackblitz.html).
 
-## Development server
+This app is a book collection manager. The user can authenticate, use the Google Books API to search for
+books and add them to their collection. This application utilizes [@ngrx/store](https://ngrx.io/guide/store) to manage
+the state of the app and to cache requests made to the Google Books API;
+[@ngrx/effects](https://ngrx.io/guide/effects) to isolate side effects; [@angular/router](https://angular.io/guide/router) to manage navigation between routes; [@angular/material](https://github.com/angular/material2) to provide design and styling.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Built with [@angular/cli](https://github.com/angular/angular-cli)
 
-## Code scaffolding
+### Included
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [@ngrx/store](https://ngrx.io/guide/store) - RxJS powered state management for Angular apps, inspired by Redux
+- [@ngrx/effects](https://ngrx.io/guide/effects) - Side effect model for @ngrx/store
+- [@ngrx/router-store](https://ngrx.io/guide/router-store) - Bindings to connect the Angular Router to @ngrx/store
+- [@ngrx/entity](https://ngrx.io/guide/entity) - Entity State adapter for managing record collections.
+- [@ngrx/store-devtools](https://ngrx.io/guide/store-devtools) - Instrumentation for @ngrx/store enabling time-travel debugging
+- [@angular/router](https://angular.io/guide/router) - Angular Router
+- [@angular/material](https://github.com/angular/material2) - Angular Material
+- [jest](https://facebook.github.io/jest/) - JavaScript test runner with easy setup, isolated browser testing and snapshot testing
 
-## Build
+### Quick start
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+# Clone the repository
+git clone https://github.com/ngrx/platform.git
 
-## Running unit tests
+# Go to the example directory
+cd platform
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Install the dependencies
+yarn
 
-## Running end-to-end tests
+# Start the server
+yarn run build && yarn run cli serve
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# Or try
+yarn run example:start
+```
 
-## Further help
+Navigate to [http://localhost:4200/](http://localhost:4200/) in your browser. To log in, the username and password is `test`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+_NOTE:_ The above setup instructions assume you have added local npm bin folders to your path.
+If this is not the case you will need to install the Angular CLI globally.
+
+### Try it on StackBlitz
+
+Try the example-app on [StackBlitz](https://ngrx.github.io/platform/stackblitz.html).
